@@ -56,5 +56,35 @@ public class arrayTest {
             System.out.println("值是：" + val);
         });
     }
+    @Test
+    public void test数组拷贝(){
+        //工具类：copyOf  copyOfRange
+        //底层方法：system.arraycopy
+        Integer[] arr1 = {1, 2, 3, 4, 5};
+        Integer[] arr2 = {6, 7, 8, 9,10};
+        //拷贝数组 arr1 的前 3 个元素生成一个新的数组
+        Integer[] arr3 = new Integer[3];
+        arr3[0] = arr1[0];
+        arr3[1] = arr1[1];
+        arr3[2] = arr1[2];
+        System.out.println("arr3 = " + Arrays.toString(arr3));
+
+        //copyOf(数组,要拷贝的长度); 数组的长度从0开始
+        Integer arr4[] = Arrays.copyOf(arr1,3);
+        System.out.println("arr4 = " + Arrays.toString(arr4));
+
+        // 拷贝数组 arr1 的后 3 位元素
+        //copyOfRange(要拷贝的数组,从哪里开始,到哪里);
+        Integer arr5[] = Arrays.copyOfRange(arr1,arr1.length-3,arr1.length);
+        System.out.println("arr5 = " + Arrays.toString(arr5));
+
+        // 拷贝数组 arr1 的第 1 位到第 3 位的元素（不包括第 3 位）
+        Integer arr6[] = Arrays.copyOfRange(arr1,0,2);
+        System.out.println("arr6 = " + Arrays.toString(arr6));
+
+        // 拷贝数组 arr2 的后 3 位到 arr1 到后 3 位
+        System.arraycopy(arr2,arr2.length-3, arr1,arr1.length-3,3);
+        System.out.println("arr1 = " + Arrays.toString(arr1));
+    }
 }
 

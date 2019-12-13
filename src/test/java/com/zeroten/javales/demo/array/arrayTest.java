@@ -2,6 +2,7 @@ package com.zeroten.javales.demo.array;
 
 import org.testng.annotations.Test;
 
+import java.awt.*;
 import java.util.Arrays;
 
 @Test
@@ -35,6 +36,25 @@ public class arrayTest {
         System.out.println("arr8 = " + Arrays.toString(arr8));
         Integer[] arr9 = {2, 9, 7, null, 0,5 };
         System.out.println("arr9 = " + Arrays.toString(arr9));
+    }
+    @Test
+    public void test遍历数组(){
+        //用三种方式遍历数组 Integer[] arr = {1, 2, 3, 4, 5}
+        Integer[] arr = {1, 2, 3, 4, 5};
+        //for 循环
+        for(int i = 0;i < arr.length;i++){
+            //System.out.println("下标：" + i + " , 存放的值是：" + arr[i]);
+            System.out.println(String.format("下标：%d , 存放的值是：%d", i , arr[i]));
+        }
+        //for each
+        int i = 0;
+        for (int val : arr){
+            System.out.println("第" + i + "次取到" + arr[i]);
+            i++;
+        }
+        Arrays.asList(arr).forEach(val -> {
+            System.out.println("值是：" + val);
+        });
     }
 }
 

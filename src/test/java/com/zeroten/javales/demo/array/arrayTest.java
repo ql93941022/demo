@@ -1,5 +1,6 @@
 package com.zeroten.javales.demo.array;
 
+import com.sun.org.apache.xpath.internal.operations.String;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -33,8 +34,8 @@ public class arrayTest {
         System.out.println("arr6 = " + Arrays.toString(arr6));
         int[] arr7 = {1, 2, 3};
         System.out.println("arr7 = " + Arrays.toString(arr7));
-        String arr8[] = {"字符串1", null, "字符串2", " "};
-        System.out.println("arr8 = " + Arrays.toString(arr8));
+//        String arr8[] = {"字符串1", null, "字符串2", " "};
+//        System.out.println("arr8 = " + Arrays.toString(arr8));
         Integer[] arr9 = {2, 9, 7, null, 0,5 };
         System.out.println("arr9 = " + Arrays.toString(arr9));
     }
@@ -44,8 +45,8 @@ public class arrayTest {
         Integer[] arr = {1, 2, 3, 4, 5};
         //for 循环
         for(int i = 0;i < arr.length;i++){
-            //System.out.println("下标：" + i + " , 存放的值是：" + arr[i]);
-            System.out.println(String.format("下标：%d , 存放的值是：%d", i , arr[i]));
+            System.out.println("下标：" + i + " , 存放的值是：" + arr[i]);
+            //System.out.println(String.format("下标：%d , 存放的值是：%d", i , arr[i]));
         }
         //for each
         int i = 0;
@@ -118,6 +119,30 @@ public class arrayTest {
         System.out.println("排序前：" + Arrays.toString(arr));
         Arrays.sort(arr);
         System.out.println("排序后：" + Arrays.toString(arr));
+    }
+    @Test
+    public void testDuoweiShuZu(){
+        // 定义⼀个⼆维数组，
+        // 第⼀维表示⽤户，
+        // 第⼆维表示⽤户的具体信息（1. 编码, 2. 姓名, 3.性别, 4.年龄）。
+        // 定义赋值并打印
+        String[][] users = new String[5][];//定义数组，第一维必须指定长度
+        users[0] = new String[4];
+        users[0][0] = "001";
+        users[0][1] = "张三";
+        users[0][2] = "女";
+        users[0][3] = "25";
+
+        users[1] = new String[4];
+        users[1][0] = "002";
+        users[1][1] = "李四";
+        users[1][2] = "男";
+        users[1][3] = "30";
+
+        System.out.println(Arrays.toString(users));
+        for(String[] user : users){
+            System.out.println(Arrays.toString(user));
+        }
     }
 }
 

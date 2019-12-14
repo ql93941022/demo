@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.util.Arrays;
+import java.util.Random;
 
 @Test
 public class arrayTest {
@@ -103,6 +104,20 @@ public class arrayTest {
 //        }
         Arrays.fill(arr,arr.length - 3,arr.length,3);
         System.out.println(Arrays.toString(arr));
+    }
+    @Test
+    public void testSort数组排序(){
+        // Arrays.sort
+        // 定义一个大小为 100 的 int 数组，
+        // 随机给每⼀位赋值⼀个 0 ~ 100 之间的数值，
+        // 然后对该数组进⾏排序并打印排序结果
+        int[] arr = new int[100];
+        for(int i = 0;i < arr.length;i++){
+            arr[i] = new Random().nextInt(100);
+        }
+        System.out.println("排序前：" + Arrays.toString(arr));
+        Arrays.sort(arr);
+        System.out.println("排序后：" + Arrays.toString(arr));
     }
 }
 
